@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="st" class="com.nt.comp.Student">
+<!--           <property name="sno" value="101"/> -->
+<!--           <property name="sname" value="deepak"/> -->
+<!--           <property name="add" value="Ballia"/> -->
+<!--           <property name="avg" value=""/> -->
+                <constructor-arg name="sno" value="102"/>
+                <constructor-arg name="sname" value="badak"/>
+                <constructor-arg name="add" value="allahabad"/>
+                <constructor-arg name="avg" value="85"/>
+        </bean>
+        
+        
+        
+ </beans>
+
+        
+        
+        
+        
