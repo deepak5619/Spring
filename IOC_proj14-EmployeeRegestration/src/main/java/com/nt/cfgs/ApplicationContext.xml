@@ -19,12 +19,6 @@
 		<constructor-arg ref="oracleDs" />
 	</bean>
 
-	<bean id="mysqlCustDAO" class="com.nt.dao.MysqlCustomerDAOImpl">
-		<constructor-arg ref="mysqlDrds" />
-	</bean>
-
-
-
 	<!-- cfg service class -->
 	<bean id="empService"
 		class="com.nt.service.EmployeeMgmtServiceImpl">

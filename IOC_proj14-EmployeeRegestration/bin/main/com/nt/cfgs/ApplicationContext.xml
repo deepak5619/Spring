@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Configiure DataSource -->
-	<bean id="oraDrds"
+	<bean id="oracleDs"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="oracle.jdbc.driver.OracleDriver" />
@@ -14,36 +14,20 @@
 		<property name="password" value="tiger" />
 	</bean>
 
-<!-- 	<bean id="mysqlDrds"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName"
-			value="com.mysql.cj.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql:///ntsp713db" />
-		<property name="username" value="root" />
-		<property name="password" value="root" />
-	</bean>
- -->
 	<!-- cfg DAO class -->
-	<bean id="oraCustDAO" class="com.nt.dao.OracleDAOImpl">
-		<constructor-arg ref="oraDrds" />
+	<bean id="oracleEmpDAO" class="com.nt.dao.OracleEmployeeDAOImpl">
+		<constructor-arg ref="oracleDs" />
 	</bean>
-
-	<bean id="mysqlCustDAO" class="com.nt.dao.MysqlCustomerDAOImpl">
-		<constructor-arg ref="mysqlDrds" />
-	</bean>
-
-
 
 	<!-- cfg service class -->
-	<bean id="custService"
-		class="com.nt.service.CustomerMgmtImpl">
-		<!-- <constructor-arg ref="mysqlCustDAO" /> -->
-		<constructor-arg ref="oraCustDAO" />
+	<bean id="empService"
+		class="com.nt.service.EmployeeMgmtServiceImpl">
+		<constructor-arg ref="oracleEmpDAO" />
 	</bean>
 
 	<!-- cfg Controller class -->
 	<bean id="controller" class="com.nt.controller.MainController">
-		<constructor-arg ref="custService" />
+		<constructor-arg ref="empService" />
 	</bean>
 
 </beans>
